@@ -30,7 +30,7 @@ The order table was taken as the fact table, which contains data from retail tra
 
 * SQL Server Reporting Services
 
-## _Refer the Project Documents for detailed information._
+## _Refer the Project Reports for detailed information._
 
 
 
