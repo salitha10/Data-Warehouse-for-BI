@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1927
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "DWBI Assignemnt 2  DWH", "DWBI Assignemnt 2  DWH\DWBI Assignemnt 2  DWH.dwproj", "{0168AA6F-A58A-4F9C-9339-E273C44E12BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0168AA6F-A58A-4F9C-9339-E273C44E12BF}.Development|Default.ActiveCfg = Development
+		{0168AA6F-A58A-4F9C-9339-E273C44E12BF}.Development|Default.Build.0 = Development
+		{0168AA6F-A58A-4F9C-9339-E273C44E12BF}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2EECB67B-4FE6-4A5D-94A7-3E417BA36752}
+	EndGlobalSection
+EndGlobal

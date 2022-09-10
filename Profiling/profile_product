@@ -1,0 +1,2539 @@
+<?xml version="1.0"?>
+<DataProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
+  <ProfileVersion>1.0</ProfileVersion>
+  <DataSources>
+    <DtsDataSource ID="{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}" Name="LAPTOP-RB82FA9K.Instacart_StagingDB">
+      <DtsConnectionManagerID>LAPTOP-RB82FA9K.Instacart_StagingDB</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{BDA29595-C22E-4943-95FB-36D33FDAC0F0}" Name="profile_aisle">
+      <DtsConnectionManagerID>profile_aisle</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{FCED0E5D-FC7C-4C73-BE81-0F688B976DA6}" Name="profile_customer">
+      <DtsConnectionManagerID>profile_customer</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{1ECACB67-4AD5-4D0C-AF34-50237262A36F}" Name="profile_dep">
+      <DtsConnectionManagerID>profile_dep</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{992D97BF-501D-4CB2-B5E0-766D10549B94}" Name="profile_order">
+      <DtsConnectionManagerID>profile_order</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{C3601615-DD15-443A-830A-A3ED22F89610}" Name="profile_order_details">
+      <DtsConnectionManagerID>profile_order_details</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{8DA19B35-2ED5-484E-A9CF-650885B99FC2}" Name="profile_product">
+      <DtsConnectionManagerID>profile_product</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{CBE7F11A-A892-4C4C-A774-73A58ABF90AF}" Name="profile_rating">
+      <DtsConnectionManagerID>profile_rating</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{9424E7EA-80C0-4A2B-9196-7C396A10B150}" Name="profiling_customer">
+      <DtsConnectionManagerID>profiling_customer</DtsConnectionManagerID>
+    </DtsDataSource>
+  </DataSources>
+  <DataProfileInput>
+    <ProfileMode>Exact</ProfileMode>
+    <Timeout>0</Timeout>
+    <Requests>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table Schema="dbo" Table="Product" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+      <ColumnStatisticsProfileRequest ID="StatisticsReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table Schema="dbo" Table="Product" />
+        <Column IsWildCard="true" />
+      </ColumnStatisticsProfileRequest>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table Schema="dbo" Table="Product" />
+        <Column IsWildCard="true" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnValueDistributionProfileRequest ID="ValueDistReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table Schema="dbo" Table="Product" />
+        <Column IsWildCard="true" />
+        <Option>FrequentValues</Option>
+        <FrequentValueThreshold>0.001</FrequentValueThreshold>
+      </ColumnValueDistributionProfileRequest>
+      <ColumnPatternProfileRequest ID="PatternReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table Schema="dbo" Table="Product" />
+        <Column IsWildCard="true" />
+        <MaxNumberOfPatterns>10</MaxNumberOfPatterns>
+        <PercentageDataCoverageDesired>95</PercentageDataCoverageDesired>
+        <CaseSensitive>false</CaseSensitive>
+        <Delimiters> \t\r\n</Delimiters>
+        <Symbols>,.;:-"'`~=&amp;/\\@!?()&lt;&gt;[]{}|#*^%</Symbols>
+        <TagTableName />
+      </ColumnPatternProfileRequest>
+      <CandidateKeyProfileRequest ID="KeyReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table Schema="dbo" Table="Product" />
+        <KeyColumns>
+          <Column IsWildCard="true" />
+        </KeyColumns>
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </CandidateKeyProfileRequest>
+      <FunctionalDependencyProfileRequest ID="FDReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table Schema="dbo" Table="Product" />
+        <DeterminantColumns>
+          <Column IsWildCard="true" />
+        </DeterminantColumns>
+        <DependentColumn IsWildCard="true" />
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <FDStrengthThreshold>0.95</FDStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </FunctionalDependencyProfileRequest>
+    </Requests>
+  </DataProfileInput>
+  <DataProfileOutput>
+    <Profiles>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Product" RowCount="49688" />
+        <Column Name="product_id" SqlDbType="Decimal" MaxLength="0" Precision="18" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Product" RowCount="49688" />
+        <Column Name="product_name" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>4</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Product" RowCount="49688" />
+        <Column Name="unit_price" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Product" RowCount="49688" />
+        <Column Name="aisle_id" SqlDbType="Decimal" MaxLength="0" Precision="18" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Product" RowCount="49688" />
+        <Column Name="department_id" SqlDbType="Decimal" MaxLength="0" Precision="18" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Product" RowCount="49688" />
+        <Column Name="date_listed" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Product" RowCount="49688" />
+        <Column Name="product_id" SqlDbType="Decimal" MaxLength="0" Precision="18" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>49688</MaxValue>
+        <Mean>24844.5</Mean>
+        <StdDev>14343.6900848422</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Product" RowCount="49688" />
+        <Column Name="unit_price" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>10</MinValue>
+        <MaxValue>50</MaxValue>
+        <Mean>30.0181331508614</Mean>
+        <StdDev>11.8008779391306</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Product" RowCount="49688" />
+        <Column Name="aisle_id" SqlDbType="Decimal" MaxLength="0" Precision="18" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>134</MaxValue>
+        <Mean>67.7695821928836</Mean>
+        <StdDev>38.3157768440461</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Product" RowCount="49688" />
+        <Column Name="department_id" SqlDbType="Decimal" MaxLength="0" Precision="18" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>21</MaxValue>
+        <Mean>11.7286870069232</Mean>
+        <StdDev>5.85035063829291</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Product" RowCount="49688" />
+        <Column Name="date_listed" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>2019-10-01T00:00:00.0000000</MinValue>
+        <MaxValue>2019-12-31T00:00:00.0000000</MaxValue>
+      </ColumnStatisticsProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Product" RowCount="49688" />
+        <Column Name="product_name" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>3</MinLength>
+        <MaxLength>159</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>23</Length>
+            <Count>1660</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>46</Length>
+            <Count>593</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>69</Length>
+            <Count>69</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>92</Length>
+            <Count>8</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>115</Length>
+            <Count>3</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>29</Length>
+            <Count>1615</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>75</Length>
+            <Count>31</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>9</Length>
+            <Count>267</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>15</Length>
+            <Count>922</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>109</Length>
+            <Count>3</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>89</Length>
+            <Count>11</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>3</Length>
+            <Count>13</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>52</Length>
+            <Count>321</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>95</Length>
+            <Count>5</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>72</Length>
+            <Count>57</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>118</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>78</Length>
+            <Count>20</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>66</Length>
+            <Count>82</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>32</Length>
+            <Count>1508</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>26</Length>
+            <Count>1732</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>12</Length>
+            <Count>640</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>35</Length>
+            <Count>1284</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>129</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>106</Length>
+            <Count>3</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>86</Length>
+            <Count>18</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>63</Length>
+            <Count>124</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>112</Length>
+            <Count>4</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>6</Length>
+            <Count>86</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>55</Length>
+            <Count>236</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>43</Length>
+            <Count>735</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>98</Length>
+            <Count>8</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>49</Length>
+            <Count>399</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>149</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>144</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>67</Length>
+            <Count>59</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>21</Length>
+            <Count>1512</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>27</Length>
+            <Count>1673</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>127</Length>
+            <Count>2</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>107</Length>
+            <Count>4</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>58</Length>
+            <Count>179</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>130</Length>
+            <Count>2</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>81</Length>
+            <Count>22</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>64</Length>
+            <Count>104</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>38</Length>
+            <Count>1019</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>87</Length>
+            <Count>13</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>101</Length>
+            <Count>2</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>44</Length>
+            <Count>652</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>7</Length>
+            <Count>141</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>50</Length>
+            <Count>398</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>24</Length>
+            <Count>1658</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>47</Length>
+            <Count>475</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>70</Length>
+            <Count>50</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>93</Length>
+            <Count>6</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>18</Length>
+            <Count>1297</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>30</Length>
+            <Count>1546</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>124</Length>
+            <Count>3</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>84</Length>
+            <Count>12</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>153</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>110</Length>
+            <Count>4</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>10</Length>
+            <Count>377</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>61</Length>
+            <Count>153</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>41</Length>
+            <Count>811</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>90</Length>
+            <Count>7</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>104</Length>
+            <Count>4</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>4</Length>
+            <Count>45</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>119</Length>
+            <Count>3</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>96</Length>
+            <Count>11</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>142</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>125</Length>
+            <Count>3</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>65</Length>
+            <Count>104</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>79</Length>
+            <Count>21</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>19</Length>
+            <Count>1360</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>73</Length>
+            <Count>45</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>25</Length>
+            <Count>1645</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>36</Length>
+            <Count>1211</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>105</Length>
+            <Count>3</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>85</Length>
+            <Count>11</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>13</Length>
+            <Count>705</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>62</Length>
+            <Count>107</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>42</Length>
+            <Count>781</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>5</Length>
+            <Count>78</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>56</Length>
+            <Count>191</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>99</Length>
+            <Count>2</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>116</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>128</Length>
+            <Count>2</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>22</Length>
+            <Count>1701</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>76</Length>
+            <Count>23</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>59</Length>
+            <Count>158</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>82</Length>
+            <Count>23</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>39</Length>
+            <Count>960</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>33</Length>
+            <Count>1451</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>16</Length>
+            <Count>1031</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>88</Length>
+            <Count>14</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>159</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>53</Length>
+            <Count>292</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>102</Length>
+            <Count>6</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>45</Length>
+            <Count>640</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>48</Length>
+            <Count>508</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>71</Length>
+            <Count>39</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>94</Length>
+            <Count>8</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>117</Length>
+            <Count>2</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>77</Length>
+            <Count>30</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>17</Length>
+            <Count>1065</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>31</Length>
+            <Count>1505</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>123</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>60</Length>
+            <Count>174</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>83</Length>
+            <Count>17</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>134</Length>
+            <Count>2</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>34</Length>
+            <Count>1260</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>40</Length>
+            <Count>932</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>11</Length>
+            <Count>478</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>111</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>54</Length>
+            <Count>259</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>91</Length>
+            <Count>12</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>103</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>97</Length>
+            <Count>8</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>120</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>114</Length>
+            <Count>6</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>20</Length>
+            <Count>1490</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>68</Length>
+            <Count>71</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>80</Length>
+            <Count>22</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>28</Length>
+            <Count>1651</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>74</Length>
+            <Count>49</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>57</Length>
+            <Count>211</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>14</Length>
+            <Count>906</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>37</Length>
+            <Count>1143</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>137</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>8</Length>
+            <Count>169</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>51</Length>
+            <Count>383</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>151</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>100</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Product" RowCount="49688" />
+        <KeyColumns>
+          <Column Name="product_name" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>false</IsExactKey>
+        <KeyStrength>0.9979271</KeyStrength>
+        <KeyViolations>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue IsDBNull="true" />
+            </ColumnValues>
+            <Count>4</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Green Tea with Ginseng and Honey</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Wild Sardines in Spring Water</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Sea Salt Caramel Ice Cream</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>MegaFlora Probiotic</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>MATZO BALL MIX</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Lavender &amp; Chamomile baby Powder</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Gluten free Spaghetti</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Fire Roasted Diced Tomatoes With Garlic</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>18-in-1 Hemp Peppermint Pure-Castile Soap</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Vitamin D3 2000 Iu</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Tomato Juice From Concentrate</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Pineapple Slices In Heavy Syrup</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Oil Of Oregano Dietary Supplement</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Mountain Berry Blast Sports Drink</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Mediterranean sea salt</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Lasagna With Meat Sauce</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Macaroni and Cheese</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Hydro Body Sponge with Hand Strap</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Apricot Energy Bar</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Anchovy Fillets In Olive Oil</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Bbq Sauce</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Balsamic Vinegar of Modena</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Albacore Solid White Tuna In Water</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Vitamin D3 5000 Iu</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Top the Tater Chive &amp; Onion Sour Cream</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Spreadable Butter With Canola Oil</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Sour Cream And Onion Potato Chips</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Solid White Albacore Tuna in Water</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Rigatoni with Chicken &amp; Pesto</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Powerball Max in 1 Shine &amp; Protect</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Nutrition Protein Mix Blueberry Nut</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Leave-In Conditioner</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Protein PLUS Vanilla Bean Protein Shake</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Cream Of Mushroom Soup</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Cauliflower head</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Carrot and Celery Sticks</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Bag of Oranges</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Aged Balsamic Vinegar Of Modena</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Yams Cut Sweet Potatoes In Syrup</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Solid White Albacore Tuna In Spring Water</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Skinless &amp; Boneless Sardines in Olive Oil</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Prosciutto Di Parma</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Premium Lubricant Condoms ENZ</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Original Potato Chips</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Maraschino Cherries with Stems</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Half and Half</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Family Size Lasagna With Meat &amp; Sauce</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Edamame Soybeans In Pods</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Diced Peeled Tomatoes In Tomato Juice</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Dark Chocolate with Almonds</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Chipotle Peppers in Adobo Sauce</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Hearts of Palm</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Glass Cleaner with Ammonia</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Fruit Cocktail In Heavy Syrup</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Dulce De Leche Caramel Ice Cream</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Potatoes O'Brien with Onions and Peppers</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Pineapple Slices In 100% Pineapple Juice</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Original BBQ Sauce</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Mozzarella Sticks with Marinara Sauce</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Mandarin Oranges In Light Syrup</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Ibuprofen Tablets 200 Mg</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Herring In Wine Sauce</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Flat Fillets of Anchovies in Pure Olive Oil</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Gentle and Predictable Overnight Relief Laxative Tablets</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Fresh Scent Dishwasher Detergent With Dawn</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Tender white meat chicken, vegetables &amp; rice in a cheddar cheese sauce Grandma's Chicken &amp; Vegetable Rice Bake</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Chicken In A Biskit Baked Snack Crackers</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Candy bar</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Bleu Cheese Salad Dressing and Dip</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Biotin 1000 Mcg</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Beef Ravioli in Tomato &amp; Meat Sauce</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Beef Chili with Beans</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Tomato and Basil Pasta Sauce</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Salsa medium</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Pumpkin Spice</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Proactive Health Indoor Weight &amp; Hairball Care with Chicken Cat Food</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Original Chili Con Carne With Beans</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Muenster Cheese slices</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Crushed Tomatoes With Basil</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Blanc de Noirs</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>American Cheese Slices</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Vitamin D3 1000 IU</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Ultragel Personal Lubricant</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Organic Balsamic Vinegar of Modena</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>DRINKING WATER</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Cream of Celery Condensed Soup</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Cosmic Brownies With Chocolate Chip Candy</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Chunk Light Tuna in Vegetable Oil</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Chili With Beans</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Chicken with Rice Soup</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Cookies 'n Cream Ice Cream</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Concentrace Trace Mineral Drops</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Cinnamon Rolls with Icing</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Chopped Garlic in Water</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Cream of Tartar</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Coconut Juice With Pulp</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Chunk Light Tuna In Water</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>BLUEBERRIES</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Bag of Organic Lemons</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+        </KeyViolations>
+      </CandidateKeyProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Product" RowCount="49688" />
+        <Column Name="product_name" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>49584</NumberOfDistinctValues>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Product" RowCount="49688" />
+        <Column Name="date_listed" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>92</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>2019-10-17T00:00:00.0000000</Value>
+            <Count>536</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-10-23T00:00:00.0000000</Value>
+            <Count>555</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-12-10T00:00:00.0000000</Value>
+            <Count>520</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-11-26T00:00:00.0000000</Value>
+            <Count>537</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-12-02T00:00:00.0000000</Value>
+            <Count>542</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-10-11T00:00:00.0000000</Value>
+            <Count>497</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-10-08T00:00:00.0000000</Value>
+            <Count>569</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-10-31T00:00:00.0000000</Value>
+            <Count>554</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-12-19T00:00:00.0000000</Value>
+            <Count>555</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-11-20T00:00:00.0000000</Value>
+            <Count>539</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-12-13T00:00:00.0000000</Value>
+            <Count>567</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-11-06T00:00:00.0000000</Value>
+            <Count>519</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-10-20T00:00:00.0000000</Value>
+            <Count>507</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-11-12T00:00:00.0000000</Value>
+            <Count>548</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-11-29T00:00:00.0000000</Value>
+            <Count>519</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-10-14T00:00:00.0000000</Value>
+            <Count>534</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-11-23T00:00:00.0000000</Value>
+            <Count>557</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-12-16T00:00:00.0000000</Value>
+            <Count>582</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-12-22T00:00:00.0000000</Value>
+            <Count>518</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-11-09T00:00:00.0000000</Value>
+            <Count>530</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-11-03T00:00:00.0000000</Value>
+            <Count>552</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-12-31T00:00:00.0000000</Value>
+            <Count>544</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-12-08T00:00:00.0000000</Value>
+            <Count>520</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-11-15T00:00:00.0000000</Value>
+            <Count>536</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-10-15T00:00:00.0000000</Value>
+            <Count>546</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-10-09T00:00:00.0000000</Value>
+            <Count>554</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-12-17T00:00:00.0000000</Value>
+            <Count>517</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-10-29T00:00:00.0000000</Value>
+            <Count>536</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-11-24T00:00:00.0000000</Value>
+            <Count>516</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-10-06T00:00:00.0000000</Value>
+            <Count>542</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-11-18T00:00:00.0000000</Value>
+            <Count>564</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-11-04T00:00:00.0000000</Value>
+            <Count>530</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-12-25T00:00:00.0000000</Value>
+            <Count>567</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-12-05T00:00:00.0000000</Value>
+            <Count>535</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-12-28T00:00:00.0000000</Value>
+            <Count>572</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-10-18T00:00:00.0000000</Value>
+            <Count>568</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-12-11T00:00:00.0000000</Value>
+            <Count>544</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-11-27T00:00:00.0000000</Value>
+            <Count>518</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-10-12T00:00:00.0000000</Value>
+            <Count>555</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-11-01T00:00:00.0000000</Value>
+            <Count>532</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-12-14T00:00:00.0000000</Value>
+            <Count>527</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-11-21T00:00:00.0000000</Value>
+            <Count>528</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-10-03T00:00:00.0000000</Value>
+            <Count>563</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-10-26T00:00:00.0000000</Value>
+            <Count>528</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-11-07T00:00:00.0000000</Value>
+            <Count>559</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-12-29T00:00:00.0000000</Value>
+            <Count>543</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-11-13T00:00:00.0000000</Value>
+            <Count>525</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-12-06T00:00:00.0000000</Value>
+            <Count>515</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-10-21T00:00:00.0000000</Value>
+            <Count>552</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-10-13T00:00:00.0000000</Value>
+            <Count>557</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-11-30T00:00:00.0000000</Value>
+            <Count>542</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-11-22T00:00:00.0000000</Value>
+            <Count>546</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-10-04T00:00:00.0000000</Value>
+            <Count>524</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-10-27T00:00:00.0000000</Value>
+            <Count>539</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-12-23T00:00:00.0000000</Value>
+            <Count>522</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-11-02T00:00:00.0000000</Value>
+            <Count>577</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-11-10T00:00:00.0000000</Value>
+            <Count>542</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-12-09T00:00:00.0000000</Value>
+            <Count>522</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-11-16T00:00:00.0000000</Value>
+            <Count>513</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-10-24T00:00:00.0000000</Value>
+            <Count>557</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-10-01T00:00:00.0000000</Value>
+            <Count>505</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-10-10T00:00:00.0000000</Value>
+            <Count>511</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-12-03T00:00:00.0000000</Value>
+            <Count>525</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-10-07T00:00:00.0000000</Value>
+            <Count>552</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-10-30T00:00:00.0000000</Value>
+            <Count>558</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-11-19T00:00:00.0000000</Value>
+            <Count>529</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-12-12T00:00:00.0000000</Value>
+            <Count>554</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-12-20T00:00:00.0000000</Value>
+            <Count>541</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-12-26T00:00:00.0000000</Value>
+            <Count>528</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-10-19T00:00:00.0000000</Value>
+            <Count>539</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-12-04T00:00:00.0000000</Value>
+            <Count>567</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-11-11T00:00:00.0000000</Value>
+            <Count>557</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-11-17T00:00:00.0000000</Value>
+            <Count>570</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-10-02T00:00:00.0000000</Value>
+            <Count>574</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-11-28T00:00:00.0000000</Value>
+            <Count>523</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-12-15T00:00:00.0000000</Value>
+            <Count>522</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-10-25T00:00:00.0000000</Value>
+            <Count>530</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-11-08T00:00:00.0000000</Value>
+            <Count>493</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-12-27T00:00:00.0000000</Value>
+            <Count>514</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-12-21T00:00:00.0000000</Value>
+            <Count>582</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-12-07T00:00:00.0000000</Value>
+            <Count>564</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-12-30T00:00:00.0000000</Value>
+            <Count>538</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-10-22T00:00:00.0000000</Value>
+            <Count>515</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-11-14T00:00:00.0000000</Value>
+            <Count>542</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-10-16T00:00:00.0000000</Value>
+            <Count>522</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-12-01T00:00:00.0000000</Value>
+            <Count>535</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-11-25T00:00:00.0000000</Value>
+            <Count>525</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-12-18T00:00:00.0000000</Value>
+            <Count>497</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-10-05T00:00:00.0000000</Value>
+            <Count>571</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-10-28T00:00:00.0000000</Value>
+            <Count>575</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-11-05T00:00:00.0000000</Value>
+            <Count>544</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2019-12-24T00:00:00.0000000</Value>
+            <Count>572</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnPatternProfile ProfileRequestID="PatternReq" IsExact="false">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Product" RowCount="49688" />
+        <Column Name="product_name" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <TopRegexPatterns>
+          <PatternDistributionItem>
+            <RegexText>(\p{L}+ )+</RegexText>
+            <Frequency>70</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>(\p{L}+ )+&amp; (\p{L}+ )+</RegexText>
+            <Frequency>7</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>.*</RegexText>
+            <Frequency>23</Frequency>
+          </PatternDistributionItem>
+        </TopRegexPatterns>
+      </ColumnPatternProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Product" RowCount="49688" />
+        <DeterminantColumns>
+          <Column Name="product_name" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="date_listed" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>false</IsExactFD>
+        <FDStrength>0.9979271</FDStrength>
+        <FDViolations>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>18-In-1 Hemp Peppermint Pure-Castile Soap</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-14T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Albacore Solid White Tuna In Water</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-11-06T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Aged Balsamic Vinegar Of Modena</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-11-28T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Bag of Oranges</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-11-08T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>American Cheese Slices</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-11-17T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Anchovy Fillets in Olive Oil</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-01T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Apricot Energy bar</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-30T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Bleu Cheese Salad Dressing And Dip</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-11-08T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Bag Of Organic Lemons</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-17T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Balsamic Vinegar of Modena</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-08T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Bbq Sauce</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-11T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Beef Chili With Beans</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-11-26T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Beef Ravioli in Tomato &amp; Meat Sauce</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-08T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Biotin 1000 mcg</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-11-15T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Blanc de Noirs</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-01T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Cosmic Brownies with Chocolate Chip Candy</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-11-08T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>BLUEBERRIES</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-26T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Candy bar</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-13T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Carrot And Celery Sticks</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-13T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Cauliflower Head</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-16T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Chicken in a Biskit Baked Snack Crackers</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-10T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Chicken with Rice Soup</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-01T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Chili With Beans</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-23T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Chipotle Peppers in Adobo Sauce</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-11-13T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Chopped Garlic In Water</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-10T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Chunk Light Tuna In Vegetable Oil</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-27T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Chunk Light Tuna in Water</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-01T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Cinnamon Rolls with Icing</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-25T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Coconut Juice with Pulp</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-23T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>ConcenTrace Trace Mineral Drops</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-11-06T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Cookies 'N Cream Ice Cream</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-18T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Megaflora Probiotic</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-11-10T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Cream of Celery Condensed Soup</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-14T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Cream Of Mushroom Soup</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-11-23T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Cream Of Tartar</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-30T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Crushed Tomatoes With Basil</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-11-29T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Dark Chocolate With Almonds</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-26T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Diced Peeled Tomatoes in Tomato Juice</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-29T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>DRINKING WATER</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-11-25T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Dulce de Leche Caramel Ice Cream</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-30T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Edamame Soybeans in Pods</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-08T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Family Size Lasagna With Meat &amp; Sauce</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-25T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Fire Roasted Diced Tomatoes With Garlic</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-23T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Flat Fillets Of Anchovies In Pure Olive Oil</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-23T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Fresh Scent Dishwasher Detergent With Dawn</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-11-17T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Fruit Cocktail In Heavy Syrup</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-19T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Gentle and Predictable Overnight Relief Laxative Tablets</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-04T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Glass Cleaner With Ammonia</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-11-01T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Gluten Free Spaghetti</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-17T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Yams Cut Sweet Potatoes In Syrup</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-11-22T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Half And Half</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-08T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Hearts Of Palm</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-24T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Herring in Wine Sauce</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-05T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Hydro Body Sponge with Hand Strap</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-11-20T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Ibuprofen Tablets 200 Mg</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-17T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Lasagna With Meat Sauce</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-07T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Lavender &amp; Chamomile Baby Powder</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-08T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Leave-in Conditioner</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-03T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Macaroni and Cheese</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-11-20T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Mandarin Oranges in Light Syrup</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-30T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Maraschino Cherries with Stems</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-16T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Matzo Ball Mix</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-11-08T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Mediterranean sea salt</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-04T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue IsDBNull="true" />
+            </DeterminantValues>
+            <DependentValue>2019-11-17T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>3</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Mountain Berry Blast Sports Drink</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-23T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Mozzarella Sticks with Marinara Sauce</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-25T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Muenster Cheese Slices</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-07T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>NUTrition Protein Mix Blueberry Nut</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-11-04T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Oil Of Oregano Dietary Supplement</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-08T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Organic Balsamic Vinegar Of Modena</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-14T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Original Bbq Sauce</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-11-14T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Original Chili Con Carne With Beans</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-15T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Original Potato Chips</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-11-14T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Pineapple Slices In 100% Pineapple Juice</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-02T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Pineapple Slices In Heavy Syrup</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-22T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Potatoes O'Brien with Onions and Peppers</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-21T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Powerball Max In 1 Shine &amp; Protect</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-10T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Premium Lubricant Condoms Enz</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-18T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>ProActive Health Indoor Weight &amp; Hairball Care with Chicken Cat Food</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-26T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Prosciutto di Parma</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-11-24T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Protein Plus Vanilla Bean Protein Shake</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-19T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Pumpkin Spice</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-03T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Rigatoni With Chicken &amp; Pesto</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-02T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Salsa medium</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-10T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Sea Salt Caramel ice Cream</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-22T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Skinless &amp; Boneless Sardines In Olive Oil</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-11-20T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Solid White Albacore Tuna In Spring Water</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-11-22T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Solid White Albacore Tuna in Water</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-11-14T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Sour Cream and Onion Potato Chips</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-03T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Spreadable Butter with Canola Oil</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-03T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Tender white meat chicken, vegetables &amp; rice in a cheddar cheese sauce Grandma's Chicken &amp; Vegetable Rice Bake</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-24T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Tomato And Basil Pasta Sauce</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-11-05T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Tomato Juice From Concentrate</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-07T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Top the Tater Chive &amp; Onion Sour Cream</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-22T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>UltraGel Personal Lubricant</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-05T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Vitamin D3 1000 IU</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-26T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Vitamin D3 2000 IU</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-11-24T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Vitamin D3 5000 IU</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-02T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Wild Sardines In Spring Water</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-10-21T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Green Tea With Ginseng And Honey</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2019-12-07T00:00:00.0000000</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+        </FDViolations>
+      </FunctionalDependencyProfile>
+    </Profiles>
+  </DataProfileOutput>
+</DataProfile>

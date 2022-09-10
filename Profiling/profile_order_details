@@ -1,0 +1,329 @@
+<?xml version="1.0"?>
+<DataProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
+  <ProfileVersion>1.0</ProfileVersion>
+  <DataSources>
+    <DtsDataSource ID="{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}" Name="LAPTOP-RB82FA9K.Instacart_StagingDB">
+      <DtsConnectionManagerID>LAPTOP-RB82FA9K.Instacart_StagingDB</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{BDA29595-C22E-4943-95FB-36D33FDAC0F0}" Name="profile_aisle">
+      <DtsConnectionManagerID>profile_aisle</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{FCED0E5D-FC7C-4C73-BE81-0F688B976DA6}" Name="profile_customer">
+      <DtsConnectionManagerID>profile_customer</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{1ECACB67-4AD5-4D0C-AF34-50237262A36F}" Name="profile_dep">
+      <DtsConnectionManagerID>profile_dep</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{992D97BF-501D-4CB2-B5E0-766D10549B94}" Name="profile_order">
+      <DtsConnectionManagerID>profile_order</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{C3601615-DD15-443A-830A-A3ED22F89610}" Name="profile_order_details">
+      <DtsConnectionManagerID>profile_order_details</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{8DA19B35-2ED5-484E-A9CF-650885B99FC2}" Name="profile_product">
+      <DtsConnectionManagerID>profile_product</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{CBE7F11A-A892-4C4C-A774-73A58ABF90AF}" Name="profile_rating">
+      <DtsConnectionManagerID>profile_rating</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{9424E7EA-80C0-4A2B-9196-7C396A10B150}" Name="profiling_customer">
+      <DtsConnectionManagerID>profiling_customer</DtsConnectionManagerID>
+    </DtsDataSource>
+  </DataSources>
+  <DataProfileInput>
+    <ProfileMode>Exact</ProfileMode>
+    <Timeout>0</Timeout>
+    <Requests>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table Schema="dbo" Table="Order_detail" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+      <ColumnStatisticsProfileRequest ID="StatisticsReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table Schema="dbo" Table="Order_detail" />
+        <Column IsWildCard="true" />
+      </ColumnStatisticsProfileRequest>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table Schema="dbo" Table="Order_detail" />
+        <Column IsWildCard="true" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnValueDistributionProfileRequest ID="ValueDistReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table Schema="dbo" Table="Order_detail" />
+        <Column IsWildCard="true" />
+        <Option>FrequentValues</Option>
+        <FrequentValueThreshold>0.001</FrequentValueThreshold>
+      </ColumnValueDistributionProfileRequest>
+      <ColumnPatternProfileRequest ID="PatternReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table Schema="dbo" Table="Order_detail" />
+        <Column IsWildCard="true" />
+        <MaxNumberOfPatterns>10</MaxNumberOfPatterns>
+        <PercentageDataCoverageDesired>95</PercentageDataCoverageDesired>
+        <CaseSensitive>false</CaseSensitive>
+        <Delimiters> \t\r\n</Delimiters>
+        <Symbols>,.;:-"'`~=&amp;/\\@!?()&lt;&gt;[]{}|#*^%</Symbols>
+        <TagTableName />
+      </ColumnPatternProfileRequest>
+      <CandidateKeyProfileRequest ID="KeyReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table Schema="dbo" Table="Order_detail" />
+        <KeyColumns>
+          <Column IsWildCard="true" />
+        </KeyColumns>
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </CandidateKeyProfileRequest>
+      <FunctionalDependencyProfileRequest ID="FDReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table Schema="dbo" Table="Order_detail" />
+        <DeterminantColumns>
+          <Column IsWildCard="true" />
+        </DeterminantColumns>
+        <DependentColumn IsWildCard="true" />
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <FDStrengthThreshold>0.95</FDStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </FunctionalDependencyProfileRequest>
+    </Requests>
+  </DataProfileInput>
+  <DataProfileOutput>
+    <Profiles>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Order_detail" RowCount="1384617" />
+        <Column Name="order_id" SqlDbType="Decimal" MaxLength="0" Precision="18" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Order_detail" RowCount="1384617" />
+        <Column Name="product_id" SqlDbType="Decimal" MaxLength="0" Precision="18" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Order_detail" RowCount="1384617" />
+        <Column Name="add_to_cart_order" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Order_detail" RowCount="1384617" />
+        <Column Name="reordered" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Order_detail" RowCount="1384617" />
+        <Column Name="order_id" SqlDbType="Decimal" MaxLength="0" Precision="18" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>3421070</MaxValue>
+        <Mean>1706297.62109016</Mean>
+        <StdDev>989732.291464901</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Order_detail" RowCount="1384617" />
+        <Column Name="product_id" SqlDbType="Decimal" MaxLength="0" Precision="18" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>49688</MaxValue>
+        <Mean>25556.235728725</Mean>
+        <StdDev>14121.2673493853</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Order_detail" RowCount="1384617" />
+        <Column Name="add_to_cart_order" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>80</MaxValue>
+        <Mean>8.75804428228167</Mean>
+        <StdDev>7.42393377721265</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Order_detail" RowCount="1384617" />
+        <Column Name="reordered" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>1</MaxValue>
+        <Mean>0.598594412750963</Mean>
+        <StdDev>0.490182763644636</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Order_detail" RowCount="1384617" />
+        <Column Name="add_to_cart_order" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>80</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>13</Value>
+            <Count>41431</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>15</Value>
+            <Count>32194</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>32</Value>
+            <Count>2910</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>24</Value>
+            <Count>9439</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>12</Value>
+            <Count>46814</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>22</Value>
+            <Count>12582</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>29</Value>
+            <Count>4543</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>8</Value>
+            <Count>74601</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>17</Value>
+            <Count>24841</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>25</Value>
+            <Count>8147</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>35</Value>
+            <Count>1846</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>6</Value>
+            <Count>91850</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>21</Value>
+            <Count>14439</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>28</Value>
+            <Count>5222</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>7</Value>
+            <Count>83142</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>10</Value>
+            <Count>59401</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>20</Value>
+            <Count>16541</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>18</Value>
+            <Count>21733</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>33</Value>
+            <Count>2507</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>19</Value>
+            <Count>19014</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>36</Value>
+            <Count>1566</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1</Value>
+            <Count>131209</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>11</Value>
+            <Count>52848</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>26</Value>
+            <Count>7068</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>31</Value>
+            <Count>3356</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3</Value>
+            <Count>116996</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>4</Value>
+            <Count>108963</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>23</Value>
+            <Count>10901</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>30</Value>
+            <Count>3909</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>5</Value>
+            <Count>100745</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>9</Value>
+            <Count>66618</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>34</Value>
+            <Count>2161</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2</Value>
+            <Count>124364</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>27</Value>
+            <Count>6082</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>14</Value>
+            <Count>36588</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>16</Value>
+            <Count>28363</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Order_detail" RowCount="1384617" />
+        <Column Name="reordered" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>2</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>1</Value>
+            <Count>828824</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0</Value>
+            <Count>555793</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+    </Profiles>
+  </DataProfileOutput>
+</DataProfile>

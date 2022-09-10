@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<DataProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
+  <ProfileVersion>1.0</ProfileVersion>
+  <DataSources>
+    <DtsDataSource ID="{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}" Name="LAPTOP-RB82FA9K.Instacart_StagingDB">
+      <DtsConnectionManagerID>LAPTOP-RB82FA9K.Instacart_StagingDB</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{BDA29595-C22E-4943-95FB-36D33FDAC0F0}" Name="profile_aisle">
+      <DtsConnectionManagerID>profile_aisle</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{FCED0E5D-FC7C-4C73-BE81-0F688B976DA6}" Name="profile_customer">
+      <DtsConnectionManagerID>profile_customer</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{1ECACB67-4AD5-4D0C-AF34-50237262A36F}" Name="profile_dep">
+      <DtsConnectionManagerID>profile_dep</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{992D97BF-501D-4CB2-B5E0-766D10549B94}" Name="profile_order">
+      <DtsConnectionManagerID>profile_order</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{C3601615-DD15-443A-830A-A3ED22F89610}" Name="profile_order_details">
+      <DtsConnectionManagerID>profile_order_details</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{8DA19B35-2ED5-484E-A9CF-650885B99FC2}" Name="profile_product">
+      <DtsConnectionManagerID>profile_product</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{CBE7F11A-A892-4C4C-A774-73A58ABF90AF}" Name="profile_rating">
+      <DtsConnectionManagerID>profile_rating</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{9424E7EA-80C0-4A2B-9196-7C396A10B150}" Name="profiling_customer">
+      <DtsConnectionManagerID>profiling_customer</DtsConnectionManagerID>
+    </DtsDataSource>
+  </DataSources>
+  <DataProfileInput>
+    <ProfileMode>Exact</ProfileMode>
+    <Timeout>0</Timeout>
+    <Requests>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table Schema="dbo" Table="Rating" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+      <ColumnStatisticsProfileRequest ID="StatisticsReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table Schema="dbo" Table="Rating" />
+        <Column IsWildCard="true" />
+      </ColumnStatisticsProfileRequest>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table Schema="dbo" Table="Rating" />
+        <Column IsWildCard="true" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnValueDistributionProfileRequest ID="ValueDistReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table Schema="dbo" Table="Rating" />
+        <Column IsWildCard="true" />
+        <Option>FrequentValues</Option>
+        <FrequentValueThreshold>0.001</FrequentValueThreshold>
+      </ColumnValueDistributionProfileRequest>
+      <ColumnPatternProfileRequest ID="PatternReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table Schema="dbo" Table="Rating" />
+        <Column IsWildCard="true" />
+        <MaxNumberOfPatterns>10</MaxNumberOfPatterns>
+        <PercentageDataCoverageDesired>95</PercentageDataCoverageDesired>
+        <CaseSensitive>false</CaseSensitive>
+        <Delimiters> \t\r\n</Delimiters>
+        <Symbols>,.;:-"'`~=&amp;/\\@!?()&lt;&gt;[]{}|#*^%</Symbols>
+        <TagTableName />
+      </ColumnPatternProfileRequest>
+      <CandidateKeyProfileRequest ID="KeyReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table Schema="dbo" Table="Rating" />
+        <KeyColumns>
+          <Column IsWildCard="true" />
+        </KeyColumns>
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </CandidateKeyProfileRequest>
+      <FunctionalDependencyProfileRequest ID="FDReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table Schema="dbo" Table="Rating" />
+        <DeterminantColumns>
+          <Column IsWildCard="true" />
+        </DeterminantColumns>
+        <DependentColumn IsWildCard="true" />
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <FDStrengthThreshold>0.95</FDStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </FunctionalDependencyProfileRequest>
+    </Requests>
+  </DataProfileInput>
+  <DataProfileOutput>
+    <Profiles>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Rating" RowCount="49689" />
+        <Column Name="product_id" SqlDbType="Decimal" MaxLength="0" Precision="18" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Rating" RowCount="49689" />
+        <Column Name="num_of_raters" SqlDbType="Decimal" MaxLength="0" Precision="18" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Rating" RowCount="49689" />
+        <Column Name="rating" SqlDbType="Real" MaxLength="0" Precision="24" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Rating" RowCount="49689" />
+        <Column Name="product_id" SqlDbType="Decimal" MaxLength="0" Precision="18" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>49688</MaxValue>
+        <Mean>24844</Mean>
+        <StdDev>14343.9787599768</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Rating" RowCount="49689" />
+        <Column Name="num_of_raters" SqlDbType="Decimal" MaxLength="0" Precision="18" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>999</MaxValue>
+        <Mean>503.835094286462</Mean>
+        <StdDev>286.466329704469</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{968D3E0B-9BA5-4536-B2FB-33DE0110F3F6}</DataSourceID>
+        <Table DataSource="LAPTOP-RB82FA9K" Database="Instacart_StagingDB" Schema="dbo" Table="Rating" RowCount="49689" />
+        <Column Name="rating" SqlDbType="Real" MaxLength="0" Precision="24" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>5</MaxValue>
+        <Mean>2.49932379431023</Mean>
+        <StdDev>1.43338800384322</StdDev>
+      </ColumnStatisticsProfile>
+    </Profiles>
+  </DataProfileOutput>
+</DataProfile>
